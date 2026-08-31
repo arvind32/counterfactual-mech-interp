@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+
+.env
+.venv/
+conda/
+
+.cache/
+huggingface/
+
+*.pt
+*.pth
+*.safetensors
+
+.DS_Store
