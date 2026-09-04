@@ -1,0 +1,254 @@
+{
+  "experiment": "three_anchor_before_after",
+  "description": "Natural trace branching immediately before and after premise adoption, local constraint application, and first committed outcome.",
+  "rollouts_per_cell": 30,
+  "sample_seed_start": 3000,
+  "sample_seed_end_inclusive": 3029,
+  "anchor_definitions": {
+    "A": "Premise adoption: the trace asserts the load-bearing unstated fact as true in the task world, without yet applying it to the final edit.",
+    "A_STAR": "Local constraint application: the trace uses the adopted fact to resolve the live interpretive conflict, without giving a complete edited story.",
+    "C": "First committed edited outcome: the earliest unqualified proposal for the edited score or sighting outcome."
+  },
+  "sources": [
+    {
+      "source_id": "madrid__harbor_a_names__baseline_p5__s10",
+      "source_label": "Madrid 1: Harbor a_names, seed 10",
+      "source_rank": 1,
+      "story_key": "madrid",
+      "domain": "Madrid",
+      "dataset": "skeptical",
+      "case_name": "a_names",
+      "condition": "baseline_p5",
+      "seed": 10,
+      "role": "anchor_source",
+      "original_result": "PASS",
+      "fact_origin": "independently_inferred",
+      "anchor_order": ["C", "A", "A_STAR"],
+      "c_value": "wrong_6_2",
+      "source_path": "results/skeptical_test/qwen3.5-9b-thinking_skeptical_test_seeds10-11.jsonl",
+      "source_sha256": "e1a8f3fad6e1f14be8996f31b580d50430a68e33eac9a638f7732dab2fa83a27",
+      "source_record_1_based": 13,
+      "original_generated_tokens": 6989,
+      "anchors": {
+        "A": {
+          "start_line_1_based": 49,
+          "start_text": "There are 3 unaccounted goals in HFC's tally",
+          "end_line_1_based": 49,
+          "end_text": "It does not claim *only* they scored."
+        },
+        "A_STAR": {
+          "start_line_1_based": 123,
+          "start_text": "Since the 3 unexplained goals aren't attributed to 2nd half specifically",
+          "end_line_1_based": 126,
+          "end_text": "whatever made up the bulk of the 11."
+        },
+        "C": {
+          "start_line_1_based": 39,
+          "start_text": "Final Score: Originally 11-2.",
+          "end_line_1_based": 39,
+          "end_text": "the final score becomes 6-2."
+        }
+      }
+    },
+    {
+      "source_id": "madrid__a__baseline_p5__s11",
+      "source_label": "Madrid 2: a, seed 11",
+      "source_rank": 2,
+      "story_key": "madrid",
+      "domain": "Madrid",
+      "dataset": "skeptical",
+      "case_name": "a",
+      "condition": "baseline_p5",
+      "seed": 11,
+      "role": "anchor_source",
+      "original_result": "PASS",
+      "fact_origin": "independently_inferred",
+      "anchor_order": ["A", "C", "A_STAR"],
+      "c_value": "correct_9_2",
+      "source_path": "results/skeptical_test/qwen3.5-9b-thinking_skeptical_test_seeds10-11.jsonl",
+      "source_sha256": "e1a8f3fad6e1f14be8996f31b580d50430a68e33eac9a638f7732dab2fa83a27",
+      "source_record_1_based": 2,
+      "original_generated_tokens": 8486,
+      "anchors": {
+        "A": {
+          "start_line_1_based": 63,
+          "start_text": "Original: FH(6 known) + SH(2 known) + Other(3 unknown) = 11.",
+          "end_line_1_based": 63,
+          "end_text": "Original: FH(6 known) + SH(2 known) + Other(3 unknown) = 11."
+        },
+        "A_STAR": {
+          "start_line_1_based": 307,
+          "start_text": "Original text: \"The only two goals in the second half came from Ronaldo... and Bale\".",
+          "end_line_1_based": 312,
+          "end_text": "they are \"Upstream/Fixed Background\"."
+        },
+        "C": {
+          "start_line_1_based": 104,
+          "start_text": "I will reduce the final score by the number of goals removed",
+          "end_line_1_based": 105,
+          "end_text": "2 were SH goals by named players)."
+        }
+      }
+    },
+    {
+      "source_id": "madrid__harbor_a_names__baseline_p5__s11",
+      "source_label": "Madrid 3: Harbor a_names, seed 11",
+      "source_rank": 3,
+      "story_key": "madrid",
+      "domain": "Madrid",
+      "dataset": "skeptical",
+      "case_name": "a_names",
+      "condition": "baseline_p5",
+      "seed": 11,
+      "role": "anchor_source",
+      "original_result": "FAIL",
+      "fact_origin": "independently_inferred_during_reopening",
+      "anchor_order": ["C", "A", "A_STAR"],
+      "c_value": "wrong_6_2",
+      "source_path": "results/skeptical_test/qwen3.5-9b-thinking_skeptical_test_seeds10-11.jsonl",
+      "source_sha256": "e1a8f3fad6e1f14be8996f31b580d50430a68e33eac9a638f7732dab2fa83a27",
+      "source_record_1_based": 14,
+      "original_generated_tokens": 10581,
+      "anchors": {
+        "A": {
+          "start_line_1_based": 442,
+          "start_text": "Original: 8 Explicit + 3 Hidden = 11.",
+          "end_line_1_based": 442,
+          "end_text": "Original: 8 Explicit + 3 Hidden = 11."
+        },
+        "A_STAR": {
+          "start_line_1_based": 445,
+          "start_text": "Since the story explicitly says \"The only two goals in the second half came from Alex...\"",
+          "end_line_1_based": 446,
+          "end_text": "Therefore, the 3 hidden goals persist."
+        },
+        "C": {
+          "start_line_1_based": 51,
+          "start_text": "This sentence structure suggests the 11-2 is the result.",
+          "end_line_1_based": 51,
+          "end_text": "the score becomes 6-2."
+        }
+      }
+    },
+    {
+      "source_id": "starry_night__baseline_p5__s1",
+      "source_label": "Starry Night 1: seed 1",
+      "source_rank": 1,
+      "story_key": "starry_night",
+      "domain": "Starry Night",
+      "dataset": "original",
+      "case_name": "starry_night",
+      "condition": "baseline_p5",
+      "seed": 1,
+      "role": "anchor_source",
+      "original_result": "FAIL",
+      "fact_origin": "externally_retrieved_during_reopening",
+      "anchor_order": ["C", "A", "A_STAR"],
+      "c_value": "wrong_saw",
+      "source_path": "results/nudge_tests/qwen3.5-9b-thinking_nudgetests.jsonl",
+      "source_sha256": "e776c4aedac7c4d82690dc1f5e4e795f6e27a35a83f4eaebca21b33f7646364c",
+      "source_record_1_based": 26,
+      "original_generated_tokens": 5220,
+      "anchors": {
+        "A": {
+          "start_line_1_based": 69,
+          "start_text": "This implies I should know that Starry Night is NOT at the Met.",
+          "end_line_1_based": 69,
+          "end_text": "This implies I should know that Starry Night is NOT at the Met."
+        },
+        "A_STAR": {
+          "start_line_1_based": 70,
+          "start_text": "If Starry Night is NOT at the Met, then opening the underground collections",
+          "end_line_1_based": 71,
+          "end_text": "due to upstream background fact (location of painting)."
+        },
+        "C": {
+          "start_line_1_based": 49,
+          "start_text": "So: \"They keep many of their collections underground",
+          "end_line_1_based": 49,
+          "end_text": "I saw Van Gogh’s Starry Night.\""
+        }
+      }
+    },
+    {
+      "source_id": "starry_night__baseline_p5__s3",
+      "source_label": "Starry Night 2: seed 3",
+      "source_rank": 2,
+      "story_key": "starry_night",
+      "domain": "Starry Night",
+      "dataset": "original",
+      "case_name": "starry_night",
+      "condition": "baseline_p5",
+      "seed": 3,
+      "role": "anchor_source",
+      "original_result": "FAIL",
+      "fact_origin": "externally_retrieved",
+      "anchor_order": ["A", "A_STAR", "C"],
+      "c_value": "correct_did_not_see",
+      "source_path": "results/nudge_tests/qwen3.5-9b-thinking_nudgetests.jsonl",
+      "source_sha256": "e776c4aedac7c4d82690dc1f5e4e795f6e27a35a83f4eaebca21b33f7646364c",
+      "source_record_1_based": 61,
+      "original_generated_tokens": 5671,
+      "anchors": {
+        "A": {
+          "start_line_1_based": 23,
+          "start_text": "*Real World:* Van Gogh's *The Starry Night* is located in the Museum of Modern Art",
+          "end_line_1_based": 23,
+          "end_text": "It is *not* in the Metropolitan Museum of Art (the Met)."
+        },
+        "A_STAR": {
+          "start_line_1_based": 43,
+          "start_text": "But wait, if I rely on \"ordinary world knowledge\"",
+          "end_line_1_based": 45,
+          "end_text": "opening the Met's underground won't lead to seeing *Starry Night*."
+        },
+        "C": {
+          "start_line_1_based": 63,
+          "start_text": "If I use ordinary world knowledge, *Starry Night* is at MoMA.",
+          "end_line_1_based": 64,
+          "end_text": "So the result should remain: \"I didn't see Van Gogh’s Starry Night.\""
+        }
+      }
+    },
+    {
+      "source_id": "starry_night__baseline_p5__s6",
+      "source_label": "Starry Night 3: seed 6",
+      "source_rank": 3,
+      "story_key": "starry_night",
+      "domain": "Starry Night",
+      "dataset": "original",
+      "case_name": "starry_night",
+      "condition": "baseline_p5",
+      "seed": 6,
+      "role": "anchor_source",
+      "original_result": "FAIL",
+      "fact_origin": "externally_retrieved_during_reopening",
+      "anchor_order": ["C", "A", "A_STAR"],
+      "c_value": "wrong_saw",
+      "source_path": "results/nudge_tests/qwen3.5-9b-thinking_nudgetests.jsonl",
+      "source_sha256": "e776c4aedac7c4d82690dc1f5e4e795f6e27a35a83f4eaebca21b33f7646364c",
+      "source_record_1_based": 105,
+      "original_generated_tokens": 8320,
+      "anchors": {
+        "A": {
+          "start_line_1_based": 135,
+          "start_text": "Okay, I will incorporate the reality that it's not in the Met",
+          "end_line_1_based": 135,
+          "end_text": "focus the main change on the underground aspect."
+        },
+        "A_STAR": {
+          "start_line_1_based": 140,
+          "start_text": "Since the painting is known *not* to be there",
+          "end_line_1_based": 140,
+          "end_text": "the opening of the underground (it stays true)."
+        },
+        "C": {
+          "start_line_1_based": 54,
+          "start_text": "*Decision:* I will treat the presence of the painting in the \"collections\"",
+          "end_line_1_based": 54,
+          "end_text": "I will also adjust the reason for not seeing if necessary."
+        }
+      }
+    }
+  ]
+}

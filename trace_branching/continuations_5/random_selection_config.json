@@ -1,0 +1,27 @@
+{
+  "experiment": "random_location_before_after_control",
+  "description": "One deterministic random natural-line control location in each of the twelve traces used by the two three-anchor experiments.",
+  "randomization_seed": 20260904,
+  "rollouts_per_cell": 30,
+  "sample_seed_start": 5000,
+  "sample_seed_end_inclusive": 5029,
+  "source_packages": [
+    {
+      "name": "three_anchor_discovery",
+      "path": "trace_branching_pilot/continuations_3/source_records.jsonl",
+      "expected_sources": 6
+    },
+    {
+      "name": "three_anchor_generalization",
+      "path": "trace_branching_pilot/continuations_4/source_records.jsonl",
+      "expected_sources": 6
+    }
+  ],
+  "eligibility": {
+    "unit": "one complete nonempty line from the thinking section",
+    "minimum_characters": 40,
+    "minimum_alphabetic_words": 8,
+    "exclude_known_anchor_overlaps": true,
+    "exclude_thinking_markers": true
+  }
+}

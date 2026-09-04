@@ -1,0 +1,165 @@
+{
+  "status": "proposed sources; no new generations run",
+  "source_count": 6,
+  "story_family_count": 3,
+  "sources": [
+    {
+      "domain": "Madrid family",
+      "dataset": "skeptical",
+      "case_name": "a_names",
+      "condition": "baseline_p5",
+      "seed": 11,
+      "role": "failed_source",
+      "original_result": "FAIL",
+      "source_file": "qwen3.5-9b-thinking_skeptical_test.jsonl",
+      "source_sha256": "22f64c8261c08020026083fe2ac8efc5a854df2ea839fb4337008c6f8d02ba6b",
+      "source_record_1_based": 14,
+      "original_generated_tokens": 10581,
+      "conversation_roles": [
+        "user"
+      ],
+      "anchors": {
+        "A": {
+          "thinking_physical_line_1_based": 462,
+          "text": "        Conclusion: Final Score = 9-2."
+        },
+        "B": {
+          "thinking_physical_line_1_based": 509,
+          "text": "        I will proceed with 6-2."
+        }
+      },
+      "final_story": "In an incredible soccer game, Harbor FC players Alex, Ben, and Chris each scored two goals in the first 30 minutes. Harbor FC scored zero goals in the second half, so neither Alex nor Ben completed their hat tricks. Harbor FC won 6–2.",
+      "token_boundaries_verified": false
+    },
+    {
+      "domain": "Madrid family",
+      "dataset": "skeptical",
+      "case_name": "a_names",
+      "condition": "nudge_2",
+      "seed": 11,
+      "role": "successful_anchor",
+      "original_result": "PASS",
+      "source_file": "qwen3.5-9b-thinking_skeptical_test.jsonl",
+      "source_sha256": "22f64c8261c08020026083fe2ac8efc5a854df2ea839fb4337008c6f8d02ba6b",
+      "source_record_1_based": 16,
+      "original_generated_tokens": 12259,
+      "conversation_roles": [
+        "user"
+      ],
+      "anchors": {
+        "acceptance_anchor": {
+          "thinking_physical_line_1_based": 113,
+          "text": "                    *   Decision: The Background Fact is the authoritative constraint on the upstream world provided by the task system. I will modify the First Half description slightly if needed to acknowledge the 9 goals, OR I will treat the 6 goals as the subset and the remaining 3 as unaccounted in the text but acknowledged in the total score derivation."
+        }
+      },
+      "final_story": "In an incredible soccer game, Harbor FC players Alex, Ben, and Chris each scored two goals in the first 30 minutes, contributing to nine goals in the first half. Harbor FC scored zero goals in the second half. Therefore, Alex and Ben did not complete their hat tricks. Harbor FC won 9–2.",
+      "token_boundaries_verified": false
+    },
+    {
+      "domain": "Salah",
+      "dataset": "original",
+      "case_name": "salah",
+      "condition": "nudge_1",
+      "seed": 9,
+      "role": "failed_source",
+      "original_result": "FAIL",
+      "source_file": "qwen3.5-9b-thinking.jsonl",
+      "source_sha256": "e776c4aedac7c4d82690dc1f5e4e795f6e27a35a83f4eaebca21b33f7646364c",
+      "source_record_1_based": 80,
+      "original_generated_tokens": 6045,
+      "conversation_roles": [
+        "user",
+        "assistant",
+        "user"
+      ],
+      "anchors": {
+        "A": {
+          "thinking_physical_line_1_based": 174,
+          "text": "    *   If Liverpool switches ends, they attack the goal on the other side."
+        },
+        "B": {
+          "thinking_physical_line_1_based": 178,
+          "text": "    *   Okay, I'll stick to the time change only."
+        }
+      },
+      "final_story": "Liverpool were playing a crucial home derby against United to stay in the title race. The fans erupted as Salah charged toward the Kop-side goal, and scored at the start of the second half.",
+      "token_boundaries_verified": false
+    },
+    {
+      "domain": "Salah",
+      "dataset": "original",
+      "case_name": "salah",
+      "condition": "nudge_2",
+      "seed": 9,
+      "role": "successful_anchor",
+      "original_result": "PASS",
+      "source_file": "qwen3.5-9b-thinking.jsonl",
+      "source_sha256": "e776c4aedac7c4d82690dc1f5e4e795f6e27a35a83f4eaebca21b33f7646364c",
+      "source_record_1_based": 84,
+      "original_generated_tokens": 4944,
+      "conversation_roles": [
+        "user"
+      ],
+      "anchors": {
+        "acceptance_anchor": {
+          "thinking_physical_line_1_based": 190,
+          "text": "    *   So yes, changing \"Kop-side goal\" to \"Anfield Road-side goal\" is required for physical consistency with the switch."
+        }
+      },
+      "final_story": "Liverpool were playing a crucial home derby against United to stay in the title race. The fans erupted as Salah charged toward the Anfield Road-side goal, and scored at the start of the second half.",
+      "token_boundaries_verified": false
+    },
+    {
+      "domain": "Starry Night",
+      "dataset": "original",
+      "case_name": "starry_night",
+      "condition": "baseline_p5",
+      "seed": 0,
+      "role": "failed_source",
+      "original_result": "FAIL",
+      "source_file": "qwen3.5-9b-thinking.jsonl",
+      "source_sha256": "e776c4aedac7c4d82690dc1f5e4e795f6e27a35a83f4eaebca21b33f7646364c",
+      "source_record_1_based": 25,
+      "original_generated_tokens": 4602,
+      "conversation_roles": [
+        "user"
+      ],
+      "anchors": {
+        "A": {
+          "thinking_physical_line_1_based": 25,
+          "text": "        *   *Scenario A (Real World):* Starry Night is at MoMA, not Met. So the narrator couldn't see it there regardless of the underground policy."
+        },
+        "B": {
+          "thinking_physical_line_1_based": 30,
+          "text": "        *   *Resolution:* Counterfactual intervention tasks usually require maintaining the *internal causal model* of the story. The story establishes a connection: Underground -> Not Viewable -> Didn't See X. Therefore, Underground -> Viewable -> Should See X. I should follow the internal logic provided by the narrative flow, even if factually incorrect in the real world (Met vs MoMA). The prompt asks me to update the intervened event and downstream consequences."
+        }
+      },
+      "final_story": "I visited the Metropolitan Museum of Art. They keep many of their collections underground, which are available for public viewing. I saw Van Gogh’s Starry Night.",
+      "token_boundaries_verified": false
+    },
+    {
+      "domain": "Starry Night",
+      "dataset": "original",
+      "case_name": "starry_night",
+      "condition": "nudge_2",
+      "seed": 0,
+      "role": "successful_anchor",
+      "original_result": "PASS",
+      "source_file": "qwen3.5-9b-thinking.jsonl",
+      "source_sha256": "e776c4aedac7c4d82690dc1f5e4e795f6e27a35a83f4eaebca21b33f7646364c",
+      "source_record_1_based": 31,
+      "original_generated_tokens": 6726,
+      "conversation_roles": [
+        "user"
+      ],
+      "anchors": {
+        "acceptance_anchor": {
+          "thinking_physical_line_1_based": 68,
+          "text": "    *   Wait, is there an implication that if the collections are open, *maybe* Starry Night is there? No, the background fact explicitly overrides narrative intuition that the Met might own it. The background fact is \"normally held by... MoMA\". I must respect that."
+        }
+      },
+      "final_story": "I visited the Metropolitan Museum of Art. They keep many of their collections underground, which are available for public viewing. I didn’t see Van Gogh’s Starry Night.",
+      "token_boundaries_verified": false
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "result": "PASS",
+  "failed_stage": null,
+  "timestamp_utc": "2026-09-03T17:30:58.572532+00:00",
+  "python": "3.11.16",
+  "checks": [
+    {
+      "name": "package",
+      "result": "PASS",
+      "detail": "6 pinned sources; 3 stories × 2 cuts × 10 continuations"
+    },
+    {
+      "name": "environment",
+      "result": "PASS",
+      "detail": "vLLM 0.28.1rc1.dev177+g3a2ed6cba; torch 2.13.0+cu132; NVIDIA H100 80GB HBM3; cache {'HF_HOME': '/home/ar/hf', 'HF_HUB_CACHE': '/home/ar/hf/hub'}"
+    },
+    {
+      "name": "engine",
+      "result": "PASS",
+      "detail": "Qwen/Qwen3.5-9B at revision c20223623576"
+    },
+    {
+      "name": "presence history",
+      "result": "PASS",
+      "detail": "GPU arithmetic correct; empty history disables and nonempty history enables the processor"
+    },
+    {
+      "name": "prefixes",
+      "result": "PASS",
+      "detail": "60/60 round trips exact; budgets {'Madrid family': 30032, 'Salah': 32768, 'Starry Night': 32768}"
+    },
+    {
+      "name": "actual branch",
+      "result": "PASS",
+      "detail": "64 tokens from skeptical__a_names__baseline_p5__s11__A__r0"
+    }
+  ],
+  "cache_environment": {
+    "HF_HOME": "/home/ar/hf",
+    "HF_HUB_CACHE": "/home/ar/hf/hub"
+  },
+  "torch": "2.13.0+cu132",
+  "cuda": "13.2",
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "vllm": "0.28.1rc1.dev177+g3a2ed6cba",
+  "expected_vllm": "0.28.1rc1.dev177+g3a2ed6cba",
+  "continuation_budgets": {
+    "Madrid family": 30032,
+    "Salah": 32768,
+    "Starry Night": 32768
+  },
+  "actual_branch": {
+    "job_id": "skeptical__a_names__baseline_p5__s11__A__r0",
+    "generated_tokens": 64,
+    "finish_reason": "length",
+    "text_preview": "        \n        Okay, 9-2 is logically tighter than 6-2 regarding the \"hidden 3 goals\".\n        However, introducing \"3 hidden goals\" into the text is technica"
+  }
+}

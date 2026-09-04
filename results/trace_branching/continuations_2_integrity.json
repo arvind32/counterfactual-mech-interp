@@ -1,0 +1,31 @@
+{
+  "result": "PASS",
+  "timestamp_utc": "2026-09-04T00:34:46.499714+00:00",
+  "inputs": [
+    "/home/ar/projects/ctf-mechinterp/results/trace_branching/continuations_2_controls.jsonl"
+  ],
+  "rows": 240,
+  "expected_rows": 240,
+  "missing_jobs": 0,
+  "duplicate_jobs": 0,
+  "unknown_jobs": 0,
+  "manifest_mismatches": 0,
+  "cell_counts": {
+    "madrid__b__baseline_p5__s12 / A_STAR": 30,
+    "madrid__b__baseline_p5__s12 / A_STAR_STAR": 30,
+    "madrid__harbor_a_names__baseline_p5__s11 / A_STAR": 30,
+    "madrid__harbor_a_names__baseline_p5__s11 / A_STAR_STAR": 30,
+    "starry_night__baseline_p5__s1 / A_STAR": 30,
+    "starry_night__baseline_p5__s1 / A_STAR_STAR": 30,
+    "starry_night__baseline_p5__s3 / A_STAR": 30,
+    "starry_night__baseline_p5__s3 / A_STAR_STAR": 30
+  },
+  "finish_reasons": {
+    "stop": 240
+  },
+  "thinking_statuses": {
+    "completed": 240
+  },
+  "budget_exhausted": 0,
+  "missing_response": 0
+}

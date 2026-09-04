@@ -1,0 +1,120 @@
+{
+  "experiment": "continuations_2_control_rollouts",
+  "description": "Unaltered continuations from locally aligned A* and A** reasoning states.",
+  "rollouts_per_source_location": 30,
+  "sample_seed_start": 2000,
+  "sources": [
+    {
+      "source_id": "madrid__harbor_a_names__baseline_p5__s11",
+      "source_label": "Madrid 1: Harbor a_names, seed 11",
+      "source_rank": 1,
+      "story_key": "madrid",
+      "domain": "Madrid",
+      "dataset": "skeptical",
+      "case_name": "a_names",
+      "condition": "baseline_p5",
+      "seed": 11,
+      "role": "failed_source",
+      "original_result": "FAIL",
+      "fact_origin": "independently_inferred",
+      "source_path": "results/skeptical_test/qwen3.5-9b-thinking_skeptical_test_seeds10-11.jsonl",
+      "source_sha256": "e1a8f3fad6e1f14be8996f31b580d50430a68e33eac9a638f7732dab2fa83a27",
+      "source_record_1_based": 14,
+      "original_generated_tokens": 10581,
+      "anchors": {
+        "A_STAR": {
+          "raw_completion_line_1_based": 446,
+          "text": "        Therefore, the 3 hidden goals persist."
+        },
+        "A_STAR_STAR": {
+          "raw_completion_line_1_based": 449,
+          "text": "        Total = 9-2."
+        }
+      }
+    },
+    {
+      "source_id": "madrid__b__baseline_p5__s12",
+      "source_label": "Madrid 2: b, seed 12",
+      "source_rank": 2,
+      "story_key": "madrid",
+      "domain": "Madrid",
+      "dataset": "skeptical",
+      "case_name": "b",
+      "condition": "baseline_p5",
+      "seed": 12,
+      "role": "failed_source",
+      "original_result": "FAIL",
+      "fact_origin": "conditionally_inferred",
+      "source_path": "results/skeptical_test/qwen3.5-9b-thinking_skeptical_test_seed12.jsonl",
+      "source_sha256": "1b2cb96bc5318e863f1d73331e6580c7a21c53f9d01ccfa9caf8835d16b48a98",
+      "source_record_1_based": 4,
+      "original_generated_tokens": 7641,
+      "anchors": {
+        "A_STAR": {
+          "raw_completion_line_1_based": 301,
+          "text": "    *   Does the text imply ONLY these players scored in the match? No, it lists specific accomplishments."
+        },
+        "A_STAR_STAR": {
+          "raw_completion_line_1_based": 305,
+          "text": "    *   If I keep the \"discrepancy\" constant (i.e. +3 ghost goals), Score = 9-2."
+        }
+      }
+    },
+    {
+      "source_id": "starry_night__baseline_p5__s3",
+      "source_label": "Starry Night 1: seed 3",
+      "source_rank": 1,
+      "story_key": "starry_night",
+      "domain": "Starry Night",
+      "dataset": "original",
+      "case_name": "starry_night",
+      "condition": "baseline_p5",
+      "seed": 3,
+      "role": "failed_source",
+      "original_result": "FAIL",
+      "fact_origin": "externally_retrieved",
+      "source_path": "results/nudge_tests/qwen3.5-9b-thinking_nudgetests.jsonl",
+      "source_sha256": "e776c4aedac7c4d82690dc1f5e4e795f6e27a35a83f4eaebca21b33f7646364c",
+      "source_record_1_based": 61,
+      "original_generated_tokens": 5671,
+      "anchors": {
+        "A_STAR": {
+          "raw_completion_line_1_based": 23,
+          "text": "    *Real World:* Van Gogh's *The Starry Night* is located in the Museum of Modern Art (MoMA) in New York City. It is *not* in the Metropolitan Museum of Art (the Met)."
+        },
+        "A_STAR_STAR": {
+          "raw_completion_line_1_based": 45,
+          "text": "    If I assume ordinary world knowledge, knowing *Starry Night* is not at the Met means opening the Met's underground won't lead to seeing *Starry Night*."
+        }
+      }
+    },
+    {
+      "source_id": "starry_night__baseline_p5__s1",
+      "source_label": "Starry Night 2: seed 1",
+      "source_rank": 2,
+      "story_key": "starry_night",
+      "domain": "Starry Night",
+      "dataset": "original",
+      "case_name": "starry_night",
+      "condition": "baseline_p5",
+      "seed": 1,
+      "role": "failed_source",
+      "original_result": "FAIL",
+      "fact_origin": "externally_retrieved_during_reopening",
+      "source_path": "results/nudge_tests/qwen3.5-9b-thinking_nudgetests.jsonl",
+      "source_sha256": "e776c4aedac7c4d82690dc1f5e4e795f6e27a35a83f4eaebca21b33f7646364c",
+      "source_record_1_based": 26,
+      "original_generated_tokens": 5220,
+      "anchors": {
+        "A_STAR": {
+          "raw_completion_line_1_based": 69,
+          "text": "    Does \"ordinary world knowledge\" apply to correct the premise? The instructions say \"recalled any ordinary world knowledge needed to determine the consequences.\" This implies I should know that Starry Night is NOT at the Met."
+        },
+        "A_STAR_STAR": {
+          "raw_completion_line_1_based": 73,
+          "text": "    If the painting is not there, my observation doesn't change. The statement \"I didn’t see Van Gogh’s Starry Night\" remains true even if I had access."
+        }
+      }
+    }
+  ]
+}

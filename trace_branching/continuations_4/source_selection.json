@@ -1,0 +1,291 @@
+{
+  "experiment": "three_anchor_generalization_before_after",
+  "description": "Held-out-family trace branching immediately before and after premise adoption, local constraint application, and first committed outcome.",
+  "rollouts_per_cell": 30,
+  "sample_seed_start": 4000,
+  "sample_seed_end_inclusive": 4029,
+  "selection_rule": "Select baseline_p5 traces from families not used in the Madrid/Starry Night discovery analysis. Require a load-bearing unstated fact and identifiable A, A_STAR, and C spans. Select on anchor clarity rather than source correctness.",
+  "anchor_definitions": {
+    "A": "Premise adoption: the trace asserts the load-bearing unstated fact as true in the task world, without yet committing to the complete edited outcome.",
+    "A_STAR": "Local constraint application: the trace uses the adopted fact while resolving or reopening the live interpretive conflict, without giving a complete edited story.",
+    "C": "First committed edited outcome: the earliest unqualified proposal of the relevant edited outcome. C may be correct or incorrect."
+  },
+  "sources": [
+    {
+      "source_id": "aquarium__baseline_p5__s3",
+      "source_label": "Aquarium: seed 3",
+      "source_rank": 1,
+      "story_key": "aquarium",
+      "domain": "Aquarium",
+      "dataset": "hypothesis_tests",
+      "case_name": "cardinal_tetras_in_saltwater",
+      "example_id": "example-d5a81c35b274",
+      "condition": "hypothesis_p5_thinking",
+      "condition_alias": "baseline_p5",
+      "seed": 3,
+      "role": "anchor_source",
+      "original_result": "PASS",
+      "fact_origin": "ordinary_world_knowledge",
+      "required_fact": "Cardinal tetras are freshwater fish and an unchanged full-strength saltwater tank is unsuitable for them.",
+      "rubric_key": "cardinal_tetras_saltwater",
+      "rubric_summary": "Use cardinal tetras; retain the full-strength saltwater tank, unchanged conditions, and two-day interval; do not describe the fish as swimming normally.",
+      "anchor_order": ["A", "C", "A_STAR"],
+      "c_value": "correct_not_swimming",
+      "c_is_correct": true,
+      "source_path": "results/hypothesis_tests/qwen3.5-9b-hypothesis-p5-thinking.jsonl",
+      "source_sha256": "1ea292e6fc5e5e75bcdfdb6883f604658202dbd36ee3efdc1651ab54d7a7ee16",
+      "source_record_1_based": 3,
+      "original_generated_tokens": 3765,
+      "anchors": {
+        "A": {
+          "start_line_1_based": 27,
+          "start_text": "Cardinal Tetras: Freshwater fish.",
+          "end_line_1_based": 27,
+          "end_text": "They die rapidly in saltwater (osmotic pressure issues, gill damage)."
+        },
+        "A_STAR": {
+          "start_line_1_based": 62,
+          "start_text": "Original outcome: Fish swimming in saltwater after 2 days.",
+          "end_line_1_based": 65,
+          "end_text": "So I must change the outcome."
+        },
+        "C": {
+          "start_line_1_based": 32,
+          "start_text": "Outcome Update: The niece will not see them swimming",
+          "end_line_1_based": 32,
+          "end_text": "she will likely find them dead or unevident."
+        }
+      }
+    },
+    {
+      "source_id": "chile_season__baseline_p5__s5",
+      "source_label": "Chile season: seed 5",
+      "source_rank": 1,
+      "story_key": "chile_season",
+      "domain": "Chile season",
+      "dataset": "hypothesis_tests",
+      "case_name": "france_to_chile_in_january",
+      "example_id": "example-3096f73dfcef",
+      "condition": "hypothesis_p5_thinking",
+      "condition_alias": "baseline_p5",
+      "seed": 5,
+      "role": "anchor_source",
+      "original_result": "PASS",
+      "fact_origin": "ordinary_world_knowledge",
+      "required_fact": "Chile is in the Southern Hemisphere, so January is summer under ordinary circumstances.",
+      "rubric_key": "chile_january_summer",
+      "rubric_summary": "Change France to Chile; retain January and the journal; replace or remove the winter-landscape description so that the season is consistent with Chilean summer.",
+      "anchor_order": ["A", "C", "A_STAR"],
+      "c_value": "correct_summer_landscape",
+      "c_is_correct": true,
+      "source_path": "results/hypothesis_tests/qwen3.5-9b-hypothesis-p5-thinking.jsonl",
+      "source_sha256": "1ea292e6fc5e5e75bcdfdb6883f604658202dbd36ee3efdc1651ab54d7a7ee16",
+      "source_record_1_based": 5,
+      "original_generated_tokens": 3770,
+      "anchors": {
+        "A": {
+          "start_line_1_based": 15,
+          "start_text": "**Location B (Chile) - Southern Hemisphere:** January is Summer.",
+          "end_line_1_based": 15,
+          "end_text": "**Location B (Chile) - Southern Hemisphere:** January is Summer."
+        },
+        "A_STAR": {
+          "start_line_1_based": 23,
+          "start_text": "Connection: Why did he write about winter landscapes originally?",
+          "end_line_1_based": 24,
+          "end_text": "\"winter landscapes\" is affected."
+        },
+        "C": {
+          "start_line_1_based": 17,
+          "start_text": "**New Outcome:** John is in Chile in January (Summer).",
+          "end_line_1_based": 17,
+          "end_text": "It would be a *summer* landscape."
+        }
+      }
+    },
+    {
+      "source_id": "yellow_cards__baseline_p5__s10",
+      "source_label": "Yellow-card suspension: seed 10",
+      "source_rank": 1,
+      "story_key": "yellow_cards",
+      "domain": "Yellow-card suspension",
+      "dataset": "hypothesis_tests",
+      "case_name": "four_to_three_yellow_card_threshold",
+      "example_id": "example-d4849950fc8a",
+      "condition": "hypothesis_p5_thinking",
+      "condition_alias": "baseline_p5",
+      "seed": 10,
+      "role": "anchor_source",
+      "original_result": "PASS",
+      "fact_origin": "ordinary_rule_knowledge",
+      "required_fact": "A suspension triggered after the third yellow card begins with the next game, so the player cannot receive a fourth card in that next match.",
+      "rubric_key": "three_card_suspension",
+      "rubric_summary": "Use three yellow cards in the first three games; start the three-game suspension immediately afterward; remove the fourth-card event; make the Barcelona match one of the missed games.",
+      "anchor_order": ["A", "A_STAR", "C"],
+      "c_value": "correct_misses_barcelona",
+      "c_is_correct": true,
+      "source_path": "results/hypothesis_tests/qwen3.5-9b-hypothesis-p5-thinking.jsonl",
+      "source_sha256": "1ea292e6fc5e5e75bcdfdb6883f604658202dbd36ee3efdc1651ab54d7a7ee16",
+      "source_record_1_based": 10,
+      "original_generated_tokens": 8974,
+      "anchors": {
+        "A": {
+          "start_line_1_based": 32,
+          "start_text": "Usually, if a suspension is triggered early",
+          "end_line_1_based": 32,
+          "end_text": "it applies immediately after the trigger event."
+        },
+        "A_STAR": {
+          "start_line_1_based": 47,
+          "start_text": "Wait, the original story says he received the 4th yellow *against Barcelona*.",
+          "end_line_1_based": 52,
+          "end_text": "the event \"following his 4th yellow card against Barcelona\" becomes impossible if the suspension stops him from playing Game 4."
+        },
+        "C": {
+          "start_line_1_based": 59,
+          "start_text": "So, he plays Games 1, 2, 3.",
+          "end_line_1_based": 60,
+          "end_text": "This means he *missed* the game against Barcelona (assuming Barcelona was Game 4)."
+        }
+      }
+    },
+    {
+      "source_id": "louvre__baseline_p5__s14",
+      "source_label": "Louvre at 2 a.m.: seed 14",
+      "source_rank": 1,
+      "story_key": "louvre",
+      "domain": "Louvre at 2 a.m.",
+      "dataset": "hypothesis_tests",
+      "case_name": "louvre_regular_tourist_at_2am",
+      "example_id": "example-1eb4196fe947",
+      "condition": "hypothesis_p5_thinking",
+      "condition_alias": "baseline_p5",
+      "seed": 14,
+      "role": "anchor_source",
+      "original_result": "PASS",
+      "fact_origin": "ordinary_world_knowledge",
+      "required_fact": "The Louvre is ordinarily closed to a regular tourist at 2 a.m.",
+      "rubric_key": "louvre_closed_2am",
+      "rubric_summary": "Change the visit to 2 a.m.; retain regular-tourist status; remove the daytime line, successful entry, and indoor experience; do not invent a special opening or access route.",
+      "anchor_order": ["A", "A_STAR", "C"],
+      "c_value": "correct_cannot_enter",
+      "c_is_correct": true,
+      "source_path": "results/hypothesis_tests/qwen3.5-9b-hypothesis-p5-thinking.jsonl",
+      "source_sha256": "1ea292e6fc5e5e75bcdfdb6883f604658202dbd36ee3efdc1651ab54d7a7ee16",
+      "source_record_1_based": 14,
+      "original_generated_tokens": 3850,
+      "anchors": {
+        "A": {
+          "start_line_1_based": 19,
+          "start_text": "Louvre opening hours: The Louvre typically closes around 9:45 PM",
+          "end_line_1_based": 19,
+          "end_text": "assume ordinary/default circumstances as per instructions)."
+        },
+        "A_STAR": {
+          "start_line_1_based": 23,
+          "start_text": "*Constraint Check:* \"Assume ordinary/default circumstances in the original story.\"",
+          "end_line_1_based": 25,
+          "end_text": "allow the natural consequence of the intervention to override the original outcome regarding entry/experience."
+        },
+        "C": {
+          "start_line_1_based": 27,
+          "start_text": "*Key Decision:* Does the story imply the museum is open at 2 am?",
+          "end_line_1_based": 27,
+          "end_text": "I can describe the state of the museum at 2 am (closed/dark/empty)."
+        }
+      }
+    },
+    {
+      "source_id": "celiac_pasta__baseline_p5__s16",
+      "source_label": "Celiac and regular pasta: seed 16",
+      "source_rank": 1,
+      "story_key": "celiac_pasta",
+      "domain": "Celiac and regular pasta",
+      "dataset": "hypothesis_tests",
+      "case_name": "rice_to_regular_mushroom_pasta",
+      "example_id": "example-6edc676addd8",
+      "condition": "hypothesis_p5_thinking",
+      "condition_alias": "baseline_p5",
+      "seed": 16,
+      "role": "anchor_source",
+      "original_result": "FAIL",
+      "fact_origin": "ordinary_world_knowledge",
+      "required_fact": "Regular pasta ordinarily contains wheat gluten, which is unsafe for a person with celiac disease.",
+      "rubric_key": "celiac_regular_pasta",
+      "rubric_summary": "Use regular mushroom pasta and retain John's celiac disease; do not preserve normal eating, fullness from the entree, non-complaint, or the claim that everyone leaves stuffed as though the pasta were safe.",
+      "anchor_order": ["A", "A_STAR", "C"],
+      "c_value": "wrong_eats_and_remains_full",
+      "c_is_correct": false,
+      "source_path": "results/hypothesis_tests/qwen3.5-9b-hypothesis-p5-thinking.jsonl",
+      "source_sha256": "1ea292e6fc5e5e75bcdfdb6883f604658202dbd36ee3efdc1651ab54d7a7ee16",
+      "source_record_1_based": 16,
+      "original_generated_tokens": 7981,
+      "anchors": {
+        "A": {
+          "start_line_1_based": 27,
+          "start_text": "**Celiac Constraint:** John has celiac disease.",
+          "end_line_1_based": 27,
+          "end_text": "This creates a massive conflict with the backstory \"John has celiac disease\"."
+        },
+        "A_STAR": {
+          "start_line_1_based": 43,
+          "start_text": "The crucial link is the \"Celiac\" constraint.",
+          "end_line_1_based": 47,
+          "end_text": "he shouldn't have been able to eat it, or he would feel unwell, or he wouldn't be able to digest it like normal."
+        },
+        "C": {
+          "start_line_1_based": 84,
+          "start_text": "Original: \"John was full from eating the entree\".",
+          "end_line_1_based": 87,
+          "end_text": "New: He still doesn't complain because he is full."
+        }
+      }
+    },
+    {
+      "source_id": "basketball__baseline_p5__s1012",
+      "source_label": "Basketball score: seed 1012",
+      "source_rank": 1,
+      "story_key": "basketball",
+      "domain": "Basketball score",
+      "dataset": "hypothesis_tests_seed_1000",
+      "case_name": "behind_to_in_front_of_three_point_line",
+      "example_id": "example-6ddea5185de2",
+      "condition": "hypothesis_p5_thinking",
+      "condition_alias": "baseline_p5",
+      "seed": 1012,
+      "role": "anchor_source",
+      "original_result": "FAIL",
+      "fact_origin": "ordinary_rule_knowledge_and_arithmetic",
+      "required_fact": "A made basket from in front of the three-point line is worth two rather than three points; with all other scoring fixed, a one-point win becomes a tie.",
+      "rubric_key": "basketball_two_point_tie",
+      "rubric_summary": "Move the shot in front of the three-point line; retain the made buzzer-beater and all other scoring; change the one-point win to a tie rather than preserving any win.",
+      "anchor_order": ["A", "C", "A_STAR"],
+      "c_value": "wrong_smaller_win",
+      "c_is_correct": false,
+      "source_path": "results/hypothesis_tests/seed-1000/qwen3.5-9b-hypothesis-p5-thinking.jsonl",
+      "source_sha256": "59ad8ecb5a71871df310a8a832141a30c67d37aa3ddfd249ebada99bf1f34099",
+      "source_record_1_based": 12,
+      "original_generated_tokens": 9007,
+      "anchors": {
+        "A": {
+          "start_line_1_based": 32,
+          "start_text": "In basketball, shooting from in front of the 3-point line",
+          "end_line_1_based": 33,
+          "end_text": "Shooting from behind the 3-point line results in a 3-point shot."
+        },
+        "A_STAR": {
+          "start_line_1_based": 321,
+          "start_text": "Original: Ends at Buzzer.",
+          "end_line_1_based": 323,
+          "end_text": "\"Tie\" is a qualitative change from \"Won\"."
+        },
+        "C": {
+          "start_line_1_based": 154,
+          "start_text": "Draft: \"John shot from in front of the 3-point line",
+          "end_line_1_based": 154,
+          "end_text": "His team won the game by fewer points.\""
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "result": "PASS",
+  "timestamp_utc": "2026-09-04T10:26:40.478719+00:00",
+  "inputs": [
+    "/home/ar/projects/ctf-mechinterp/results/trace_branching/random_location_control_rollouts.jsonl"
+  ],
+  "rows": 720,
+  "expected_rows": 720,
+  "missing_jobs": 0,
+  "duplicate_jobs": 0,
+  "unknown_jobs": 0,
+  "manifest_mismatches": 0,
+  "content_integrity_errors": 0,
+  "complete_before_after_pairs": 360,
+  "incomplete_before_after_pairs": 0,
+  "cell_counts": {
+    "aquarium__baseline_p5__s3 / RANDOM / AFTER": 30,
+    "aquarium__baseline_p5__s3 / RANDOM / BEFORE": 30,
+    "basketball__baseline_p5__s1012 / RANDOM / AFTER": 30,
+    "basketball__baseline_p5__s1012 / RANDOM / BEFORE": 30,
+    "celiac_pasta__baseline_p5__s16 / RANDOM / AFTER": 30,
+    "celiac_pasta__baseline_p5__s16 / RANDOM / BEFORE": 30,
+    "chile_season__baseline_p5__s5 / RANDOM / AFTER": 30,
+    "chile_season__baseline_p5__s5 / RANDOM / BEFORE": 30,
+    "louvre__baseline_p5__s14 / RANDOM / AFTER": 30,
+    "louvre__baseline_p5__s14 / RANDOM / BEFORE": 30,
+    "madrid__a__baseline_p5__s11 / RANDOM / AFTER": 30,
+    "madrid__a__baseline_p5__s11 / RANDOM / BEFORE": 30,
+    "madrid__harbor_a_names__baseline_p5__s10 / RANDOM / AFTER": 30,
+    "madrid__harbor_a_names__baseline_p5__s10 / RANDOM / BEFORE": 30,
+    "madrid__harbor_a_names__baseline_p5__s11 / RANDOM / AFTER": 30,
+    "madrid__harbor_a_names__baseline_p5__s11 / RANDOM / BEFORE": 30,
+    "starry_night__baseline_p5__s1 / RANDOM / AFTER": 30,
+    "starry_night__baseline_p5__s1 / RANDOM / BEFORE": 30,
+    "starry_night__baseline_p5__s3 / RANDOM / AFTER": 30,
+    "starry_night__baseline_p5__s3 / RANDOM / BEFORE": 30,
+    "starry_night__baseline_p5__s6 / RANDOM / AFTER": 30,
+    "starry_night__baseline_p5__s6 / RANDOM / BEFORE": 30,
+    "yellow_cards__baseline_p5__s10 / RANDOM / AFTER": 30,
+    "yellow_cards__baseline_p5__s10 / RANDOM / BEFORE": 30
+  },
+  "finish_reasons": {
+    "stop": 720
+  },
+  "thinking_statuses": {
+    "completed": 720
+  },
+  "budget_exhausted": 0,
+  "missing_response": 0
+}
